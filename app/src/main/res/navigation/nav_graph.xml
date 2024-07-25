@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/ITunesList">
+
+    <fragment
+        android:id="@+id/ITunesList"
+        android:name="com.burakhkahraman.itunesnavigation.ITunesList"
+        android:label="ITunesList" >
+        <action
+            android:id="@+id/action_ITunesList_to_ITunesDetail"
+            app:destination="@id/ITunesDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/ITunesDetail"
+        android:name="com.burakhkahraman.itunesnavigation.ITunesDetail"
+        android:label="ITunesDetail">
+        <argument
+            android:name="Result"
+            app:argType="com.burakhkahraman.itunessearch.network.response.Result" />
+
+        <action
+            android:id="@+id/action_ITunesDetail_to_ITunesList"
+            app:destination="@id/ITunesList" />
+    </fragment>
+</navigation>
